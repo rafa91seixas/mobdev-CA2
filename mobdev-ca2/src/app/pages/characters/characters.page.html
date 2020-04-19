@@ -1,0 +1,14 @@
+[8:06 p.m., 19/4/2020] Carol ti: <ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Characters</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item button detail lines="inset" *ngFor="let character of characters | async" (click)="openDetails(characters)">
+        {{ character.name }}
+        </ion-item>
+    </ion-list>
+    
+</ion-content>
