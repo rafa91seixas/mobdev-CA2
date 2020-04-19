@@ -20,8 +20,8 @@ export class QuotesPage implements OnInit {
     });
   }
 
-  openDetail(deaths){
-      let quotes_author = name;
-      this.router.navigateByUrl('/tabs/deaths/${death}');
+  openDetails(quote){
+      //let quotes_author = name;
+      this.router.navigateByUrl('/tabs/quotes/${id}'); 
   }
 }
