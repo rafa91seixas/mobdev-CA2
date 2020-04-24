@@ -1,17 +1,36 @@
 <ion-header>
-  <ion-toolbar color="primary">
-		<ion-buttons slot="start" defaulthref="/tabs/characters">
+	<ion-toolbar color="primary">
+		<ion-buttons slot="start" defaulthref="/tabs/(character:character)">
 			<ion-back-button></ion-back-button>
 		</ion-buttons>
-    <ion-title>Character Details</ion-title>
-  </ion-toolbar>
+		<ion-title>Character Details</ion-title>
+	</ion-toolbar>
 </ion-header>
 <ion-content padding>
 
-	<ion-card *ngIf="character-details">
+	<ion-card *ngIf="character">
 		<ion-card-content>
-			{{ character.opening_crawl }}
+			{{ character-title.character }}
 		</ion-card-content>
-	</ion-card>
+		<ion-card *ngIf="character" class="movie-card">
+			<ion-card-header color="warning">Character {{ character.character }}: {{ character.title }}
+			</ion-card-header>
+			<ion-card-content>
+				{{ character.series }}
+			</ion-card-content>
+			<ion-item class="movie-info" lines="none">
+				<ion-icon name="calendar" slot="start"></ion-icon>
+				Release Date: {{ character.air_date }}
+			</ion-item>
+			<ion-item class="movie-info" lines="none">
+				<ion-icon name="people-outline" slot="start"></ion-icon>
+				Characters: {{ characetr.characters }}
+			</ion-item>
+			<ion-item class="movie-info" lines="none">
+				<ion-icon name="document" slot="start"></ion-icon>
+				Season: {{ character.season}}
+			</ion-item>
 
+		</ion-card>
+	</ion-card>
 </ion-content>
