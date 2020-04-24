@@ -1,6 +1,6 @@
 <ion-header>
 	<ion-toolbar color="primary">
-		<ion-buttons slot="start" defaulthref="/tabs/(character:character)">
+		<ion-buttons slot="start" defaulthref="/tabs/episodes">
 			<ion-back-button></ion-back-button>
 		</ion-buttons>
 		<ion-title>Character Details</ion-title>
@@ -10,25 +10,27 @@
 
 	<ion-card *ngIf="character">
 		<ion-card-content>
-			{{ character-title.character }}
+			{{ character.name }}
 		</ion-card-content>
 		<ion-card *ngIf="character" class="movie-card">
 			<ion-card-header color="warning">Character {{ character.character }}: {{ character.title }}
 			</ion-card-header>
 			<ion-card-content>
-				{{ character.series }}
+				{{ character.birthday }}
 			</ion-card-content>
-			<ion-item class="movie-info" lines="none">
+            <p align="center"><img [src]="character.img" width="180" height="180" class="info-img"></p>
+			
+            <ion-item class="movie-info" lines="none">
 				<ion-icon name="calendar" slot="start"></ion-icon>
-				Release Date: {{ character.air_date }}
+				Actor: {{ character.name }}
 			</ion-item>
 			<ion-item class="movie-info" lines="none">
 				<ion-icon name="people-outline" slot="start"></ion-icon>
-				Characters: {{ characetr.characters }}
+				Nickname: {{ character.nickname }}
 			</ion-item>
 			<ion-item class="movie-info" lines="none">
 				<ion-icon name="document" slot="start"></ion-icon>
-				Season: {{ character.season}}
+				Category: {{ character.category}}
 			</ion-item>
 
 		</ion-card>
