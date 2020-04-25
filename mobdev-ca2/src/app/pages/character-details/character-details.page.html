@@ -13,7 +13,7 @@
 			{{ character.category }}
 		</ion-card-content>
 		<ion-card *ngIf="character" class="movie-card">
-			<ion-card-header color="danger">Character {{ character.character }}: {{ character.title }}
+			<ion-card-header color="danger">Character {{ character.character}}: {{ character.name }}
 			</ion-card-header>
 			<ion-card-content>
 				{{ character.status }}
@@ -21,11 +21,11 @@
             <p align="center"><img [src]="character.img" width="150" height="150" class="info-img"></p>
 			
             <ion-item class="movie-info" lines="none">
-				<ion-icon name="person-outline" slot="start"></ion-icon>
-				Character: {{ character.name }}
+				<ion-icon name="film-outline" slot="start"></ion-icon>
+				Category: {{ character.category }}
 			</ion-item>
 			<ion-item class="movie-info" lines="none">
-				<ion-icon name="body-outline" slot="start"></ion-icon>
+				<ion-icon name="person-circle-outline" slot="start"></ion-icon>
 				Nickname: {{ character.nickname }}
 			</ion-item>
 			<ion-item class="movie-info" lines="none">
