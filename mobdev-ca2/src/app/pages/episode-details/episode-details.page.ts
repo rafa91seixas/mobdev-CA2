@@ -18,12 +18,11 @@ export class EpisodeDetailsPage implements OnInit {
     ) {}
 
   ngOnInit() {
-        //page iniciation of the page
+        
         this.episodeId = this.activatedRoute.snapshot.paramMap.get('id');
-        //asking Api to take the episode (where the http goes for that specific episode(id))
-        //pass the request back to Api
+        
         this.api.getEpisode(this.episodeId).subscribe(res => {
-            this.episode = res[0]; //the result of that request for each id of this array
+            this.episode = res[0]; 
         });
 
 
