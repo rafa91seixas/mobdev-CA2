@@ -11,6 +11,7 @@ import { ApiService } from '../../services/api.service';
 export class DeathsPage implements OnInit {
 
     deaths: Observable<any>;
+    search:any="";
 
     constructor(private router: Router, private api: ApiService) { }
   
@@ -21,7 +22,11 @@ export class DeathsPage implements OnInit {
     });
   }
   openDetail(deaths){
-      let death_count = name;
-      this.router.navigateByUrl('/tabs/deaths/${death}');
+      let death = name;
+      this.router.navigateByUrl(`/tabs/deaths/${death}`);
+  }
+  searching(death){
+    console.log(death.author);
+    return death.responsible.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
   }
 }
