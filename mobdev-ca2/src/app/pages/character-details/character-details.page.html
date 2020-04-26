@@ -1,5 +1,5 @@
 <ion-header>
-	<ion-toolbar color="danger">
+	<ion-toolbar color="primary">
 		<ion-buttons slot="start" defaulthref="/tabs/characters">
 			<ion-back-button></ion-back-button>
 		</ion-buttons>
@@ -21,16 +21,14 @@
 			{{ character.category }}
 		</ion-card-content>
 		<ion-card *ngIf="character" class="movie-card">
-			<ion-card-header color="danger">Character {{ character.character}}: {{ character.name }}
+			<ion-card-header color="primary">Character {{ character.character}}: {{ character.name }}
 			</ion-card-header>
-			<ion-card-content>
-				{{ character.status }}
-			</ion-card-content>
+			
 			<p align="center"><img [src]="character.img" width="150" height="150" class="info-img"></p>
 
 				<ion-item class="movie-info" lines="none">
-					<ion-icon name="film-outline" slot="start"></ion-icon>
-					Category: {{ character.category }}
+					<ion-icon name="flash-off-outline" slot="start"></ion-icon>
+					Status: {{ character.status }}
 				</ion-item>
 				<ion-item class="movie-info" lines="none">
 					<ion-icon name="person-circle-outline" slot="start"></ion-icon>
@@ -40,6 +38,7 @@
 					<ion-icon name="ribbon-outline" slot="start"></ion-icon>
 					Occupation: {{ character.occupation}}
 				</ion-item>
+
 
 		</ion-card>
 	</ion-card>
