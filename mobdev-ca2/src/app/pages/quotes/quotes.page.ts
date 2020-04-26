@@ -29,7 +29,7 @@ export class QuotesPage implements OnInit {
     openDetails(quote) {
         
         let quoteid = quote.quote_id;
-        this.router.navigateByUrl(`/tabs/quotes/${quote.quote_id}`);
+        this.router.navigateByUrl(`/tabs/quotes/${quote.id}`);
         console.log('my dataQuoteDetails: ', quoteid);
     }
     filter(quote){

@@ -1,9 +1,17 @@
 <ion-header>
 	<ion-toolbar color="danger">
-		<ion-buttons slot="start" defaulthref="/tabs/episodes">
+		<ion-buttons slot="start" defaulthref="/tabs/characters">
 			<ion-back-button></ion-back-button>
 		</ion-buttons>
 		<ion-title>Character Details</ion-title>
+		<ion-buttons slot="end">
+			<ion-button (click)="unfavouriteCharacter()" *ngIf="isFavouriteCharacters">
+				<ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+			</ion-button>
+			<ion-button (click)="favouriteCharacter()" *ngIf="!isFavouriteCharacters">
+				<ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+			</ion-button>
+		</ion-buttons>
 	</ion-toolbar>
 </ion-header>
 <ion-content padding>
@@ -18,20 +26,20 @@
 			<ion-card-content>
 				{{ character.status }}
 			</ion-card-content>
-            <p align="center"><img [src]="character.img" width="150" height="150" class="info-img"></p>
-			
-            <ion-item class="movie-info" lines="none">
-				<ion-icon name="film-outline" slot="start"></ion-icon>
-				Category: {{ character.category }}
-			</ion-item>
-			<ion-item class="movie-info" lines="none">
-				<ion-icon name="person-circle-outline" slot="start"></ion-icon>
-				Nickname: {{ character.nickname }}
-			</ion-item>
-			<ion-item class="movie-info" lines="none">
-				<ion-icon name="ribbon-outline" slot="start"></ion-icon>
-				Occupation: {{ character.occupation}}
-			</ion-item>
+			<p align="center"><img [src]="character.img" width="150" height="150" class="info-img"></p>
+
+				<ion-item class="movie-info" lines="none">
+					<ion-icon name="film-outline" slot="start"></ion-icon>
+					Category: {{ character.category }}
+				</ion-item>
+				<ion-item class="movie-info" lines="none">
+					<ion-icon name="person-circle-outline" slot="start"></ion-icon>
+					Nickname: {{ character.nickname }}
+				</ion-item>
+				<ion-item class="movie-info" lines="none">
+					<ion-icon name="ribbon-outline" slot="start"></ion-icon>
+					Occupation: {{ character.occupation}}
+				</ion-item>
 
 		</ion-card>
 	</ion-card>

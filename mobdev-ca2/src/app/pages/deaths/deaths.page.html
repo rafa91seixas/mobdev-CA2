@@ -5,22 +5,22 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar name="search" [(ngModel)]="search"  cancelButtonText="Cancel"></ion-searchbar>
+  <ion-searchbar name="search" [(ngModel)]="search" placeholder="Search by Responsible" cancelButtonText="Cancel"></ion-searchbar>
   <ion-list>
     <div *ngFor="let death of deaths | async">
       <ion-item *ngIf="filter(death)">
-      <p>{{ death.death }}</p>
+        <ion-label>
+         <div position=left>  
+           <h1> <ion-icon name="heart-dislike" slot="start"></ion-icon></h1>
+          </div>
+          <div position=rigth>  
+           <h2>{{ death.death }}</h2> 
+        </div>
+     
+            <h3> Number of Deaths: {{death.number_of_deaths}}</h3>
+       </ion-label>
     </ion-item>
     </div>
     
   </ion-list> 
-
-
-  
-</ion-content>
-    <ion-list>
-        <ion-item button detail lines="inset" *ngFor="let death of deaths | async" (click)="openDetails(deaths)">
-        {{ death.death}}
-        </ion-item>
-    </ion-list>
 </ion-content>

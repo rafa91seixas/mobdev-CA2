@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar name="search" [(ngModel)]="search" placeholder="Search by Author" cancelButtonText="Cancel"></ion-searchbar>
+  <ion-searchbar name="search" [(ngModel)]="search" placeholder="Search by Author name" cancelButtonText="Cancel"></ion-searchbar>
   <ion-list>
     <div *ngFor="let quote of quotes | async">
       <ion-item *ngIf="filter(quote)">

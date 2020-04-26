@@ -16,17 +16,12 @@ export class DeathsPage implements OnInit {
     constructor(private router: Router, private api: ApiService) { }
   
   ngOnInit() {
-      this.deaths = this.api.getDeaths();
-      this.deaths.subscribe(data => {console.log('my data: ',data);
+       this.deaths = this.api.getDeaths();
+         this.router.navigateByUrl(`/tabs/deaths}`);
     
-    });
   }
-  openDetail(deaths){
-      let death = name;
-      this.router.navigateByUrl(`/tabs/deaths/${death}`);
-  }
-  searching(death){
-    console.log(death.author);
+  filter(death){
+    // console.log(death.author);
     return death.responsible.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
   }
 }
