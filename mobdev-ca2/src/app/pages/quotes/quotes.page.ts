@@ -28,9 +28,9 @@ export class QuotesPage implements OnInit {
 
     openDetails(quote) {
         
-        let quoteid = quote.quote_id;
-        this.router.navigateByUrl(`/tabs/quotes/${quote.id}`);
-        console.log('my dataQuoteDetails: ', quoteid);
+        let quoteId = quote.quote_id;
+        this.router.navigateByUrl(`/tabs/quotes/${quote.quote_id}`);
+        console.log('my dataQuoteDetails: ', quoteId);
     }
     filter(quote){
     // console.log(death.author);
